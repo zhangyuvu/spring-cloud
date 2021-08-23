@@ -6,3 +6,23 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://localhost:7003/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+
+ribbon:
+  #方法调用处理时间
+  ReadTimeout: 6000
+  #连接时间
+  ConnectTimeout: 6000
+
+#超时时间配置，此处全局超时配置时间大于@HystrixProperty配置时间后，@HystrixProperty注解中的超时才生效
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
