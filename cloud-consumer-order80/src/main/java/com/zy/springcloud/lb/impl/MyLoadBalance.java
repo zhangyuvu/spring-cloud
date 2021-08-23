@@ -41,6 +41,4 @@ public class MyLoadBalance implements LoadBalance {
         log.info("当前访问次数：{}",next);
         return next;
     }
-
-
 }
