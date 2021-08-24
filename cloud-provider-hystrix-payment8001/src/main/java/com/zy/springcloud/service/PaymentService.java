@@ -1,9 +1,11 @@
 package com.zy.springcloud.service;
 
+import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
 
@@ -75,6 +77,7 @@ public class PaymentService {
 
         return Thread.currentThread().getName()+"\t"+"调用成功，流水号: " + serialNumber;
     }
+
     public String paymentCircuitBreaker_fallback(@PathVariable("id") Integer id) {
         return "id 不能负数，请稍后再试，/(ㄒoㄒ)/~~   id: " +id;
     }
