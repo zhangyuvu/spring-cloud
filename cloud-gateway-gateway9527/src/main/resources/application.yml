@@ -23,8 +23,8 @@ spring:
           predicates:
             - Path=/payment/serverPort/**         # 断言，路径相匹配的进行路由
             - After=2021-08-24T22:39:23.398+08:00[Asia/Shanghai]
-            - Cookie=username,zynb  # 断言， 携带该cookie username=zynb 则匹配成功
-            - Header=X-Request-Id, \d+  #
+#            - Cookie=username,zynb  # 断言， 携带该cookie username=zynb 则匹配成功
+#            - Header=X-Request-Id, \d+  #
 #        - id: payment_routh3 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
 #          uri: http://news.baidu.com          #匹配后提供服务的路由地址
 #          #uri: lb://cloud-payment-service #匹配后提供服务的路由地址
