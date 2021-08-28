@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
@@ -12,13 +12,12 @@ spring:
       name: config #配置文件名称
       profile: dev #读取后缀名称   上述3个综合：master分支上config-dev.yml的配置文件被读取http://config-3344.com:3344/master/config-dev.yml
 
-  #rabbitmq相关配置 15672是Web管理界面的端口；5672是MQ访问的端口<----------------------
+ #rabbitmq相关配置 15672是Web管理界面的端口；5672是MQ访问的端口<----------------------
   rabbitmq:
     host: 192.168.16.128
     port: 5672
     username: zynb
     password: 123
-
 
 #服务注册到eureka地址
 eureka:
