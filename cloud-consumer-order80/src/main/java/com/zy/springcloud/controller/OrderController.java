@@ -31,6 +31,13 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject("http://localhost:8001"+"/payment/zipkin/", String.class);
+        return result;
+    }
+
     @PostMapping("/consumer/payment/create")
     public CommonResult create(@RequestBody Payment payment){
         String uri = "/payment/create";
