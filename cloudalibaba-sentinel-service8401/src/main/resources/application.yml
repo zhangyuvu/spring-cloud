@@ -1,0 +1,27 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: localhost:8847 #配置Sentinel dashboard地址
+        port: 8719  # dashboard 和本微服务的交互端口 如若当前端口被占用 向上 +1继续寻找端口
+
+        #不设置就无法得知不到本机的地址 也就无法和本机的交互端口进行连接沟通
+#        clientIp: 192.168.1.216  # 使用linux的sentinel时 需要配置本主机ip地址（也就是客户端ip)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#feign:
+#  sentinel:
+#    enabled: true # 激活Sentinel对Feign的支持
